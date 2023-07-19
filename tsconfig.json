@@ -23,10 +23,11 @@
     "experimentalDecorators": true,
     "paths": {
       "src/*": ["src/*"],
+      "test/*": ["test/*"],
       "@protocolink/compound-kit": ["src"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules/**/*", "dist/**/*"],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
