@@ -26,7 +26,7 @@ export async function getApiVersion(): Promise<string> {
 
 export async function quote(chainId: number, marketId: string, operation: string, data: any) {
   const resp = await client.post(`/v1/markets/${chainId}/${marketId}/${operation}`, data);
-  return common.classifying(resp.data);
+  return resp.data;
 }
 
 export async function buildRouterTransactionRequest(routerData: apisdk.RouterData): Promise<common.TransactionRequest> {
