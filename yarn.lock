@@ -720,14 +720,14 @@
     bignumber.js "^9.0.2"
     ts-essentials "^9.1.2"
 
-"@protocolink/api@^0.2.7":
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/@protocolink/api/-/api-0.2.7.tgz#d250b3f1dffdcd9a64952b3b3227caeff420ddab"
-  integrity sha512-CZ66JrwOkuujZmIoU1mGqCvlm8xU1mjpnFLPfY8uQuvk7TaKSPhiOu4aVWwa/6v5BHOR9ekQdW66j4D0SMT5zA==
+"@protocolink/api@^0.2.8":
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/@protocolink/api/-/api-0.2.8.tgz#9d1a426423390b71f0bd022fd32498ea7c9dc9db"
+  integrity sha512-vANJ9qXmCxgF1NiSzDh6tncnR+h7ujiYb7Lm1VetIo04bRUQsefnU2xqWv3lUYFhN4jMTEUsL43ILGfeeOKqiA==
   dependencies:
     "@protocolink/common" "^0.2.15"
-    "@protocolink/core" "^0.2.14"
-    "@protocolink/logics" "^0.2.8"
+    "@protocolink/core" "^0.2.15"
+    "@protocolink/logics" "^0.2.9"
     "@types/lodash" "^4.14.195"
     "@types/uuid" "^9.0.2"
     "@uniswap/permit2-sdk" "^1.2.0"
@@ -748,24 +748,24 @@
     type-fest "^3.12.0"
     zksync-web3 "^0.14.3"
 
-"@protocolink/core@^0.2.14":
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/@protocolink/core/-/core-0.2.14.tgz#1befb32295abc8e3de63e2c7581e6b942aba3c45"
-  integrity sha512-xzUWHLPQcg4dDlw6TXPjoD66npqqoPZQQpXZrkp6S6yO81lI0VppwhhoyuDt2FQuAn353gAKP4u+xgFAnQFMyw==
+"@protocolink/core@^0.2.15":
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/@protocolink/core/-/core-0.2.15.tgz#ea490d7a6ec69636cfb488705b805d921f0b22f4"
+  integrity sha512-NZePxZD34D0UfQZQoCu2i5xtUu4txZMxJf5WPmoyhq9FsYWBUOIH3Cuk+mP/UQGtwEm1qXlW4/ZVzLdIOtlfCw==
   dependencies:
     "@protocolink/common" "^0.2.15"
     ethers "^5.7.2"
     tiny-invariant "^1.3.1"
     zksync-web3 "^0.14.3"
 
-"@protocolink/logics@^0.2.8":
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/@protocolink/logics/-/logics-0.2.8.tgz#321d5c670b68fe8468c90f3c4e6b989f9c59a7a7"
-  integrity sha512-7gjRYMw0xjYq+5GiWGRSQvG3IsN0Qzuw3+umn+3Ep0LrcZk/iioJ67TY93D1RD8lUYm32QrXS4JiYz2C7d69/w==
+"@protocolink/logics@^0.2.9":
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/@protocolink/logics/-/logics-0.2.9.tgz#a6242523404392c8efd4035d6b15b7edd877576d"
+  integrity sha512-b5VTw8OIwS9s5F+CFIyIntEf3pHyprQDFzCSw41AxZia+aFVIqH4v9M0JAk09bam3sRAAjxzpWSE1QtK12cIJw==
   dependencies:
     "@paraswap/sdk" "^6.2.1"
     "@protocolink/common" "^0.2.15"
-    "@protocolink/core" "^0.2.14"
+    "@protocolink/core" "^0.2.15"
     "@types/lodash" "^4.14.195"
     "@uniswap/permit2-sdk" "^1.2.0"
     "@uniswap/sdk-core" "^3.2.6"
