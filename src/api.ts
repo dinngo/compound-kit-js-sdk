@@ -30,6 +30,6 @@ export async function quote(chainId: number, marketId: string, operation: string
 }
 
 export async function buildRouterTransactionRequest(routerData: apisdk.RouterData): Promise<common.TransactionRequest> {
-  const { data } = await client.post('/v1/transactions', routerData);
+  const { data } = await client.post('/v1/transactions/build', routerData);
   return data;
 }
