@@ -5,7 +5,7 @@ import * as common from '@protocolink/common';
 import { expect } from 'chai';
 import * as logics from '@protocolink/logics';
 
-describe('Markets', function () {
+describe('Leverage', function () {
   it('Test getLeverageQuotation', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
