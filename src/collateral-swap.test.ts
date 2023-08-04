@@ -1,9 +1,8 @@
 import { MarketId } from 'src/config';
 import * as apisdk from '@protocolink/api';
-import { buildLeverageTransactionRequest, getLeverageQuotation } from './leverage';
+import { buildCollateralSwapTransactionRequest, getCollateralSwapQuotation } from './collateral-swap';
 import * as common from '@protocolink/common';
 import { expect } from 'chai';
-import { getCollateralSwapQuotation } from './collateral-swap';
 import * as logics from '@protocolink/logics';
 
 describe('Collateral Swap', function () {
@@ -143,7 +142,7 @@ describe('Collateral Swap', function () {
       ],
     };
 
-    const transactionRequest = await buildLeverageTransactionRequest(routerData);
+    const transactionRequest = await buildCollateralSwapTransactionRequest(routerData);
     expect(transactionRequest).to.include.all.keys('to', 'data', 'value');
   });
 });
