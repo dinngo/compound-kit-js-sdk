@@ -18,8 +18,22 @@ describe('Leverage', function () {
     const resp = await getLeverageQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('leverageTimes', 'currentPosition', 'targetPosition');
-    expect(resp.quotation.currentPosition).to.have.keys('utilization', 'healthRate', 'netApr', 'totalDebt');
-    expect(resp.quotation.targetPosition).to.have.keys('utilization', 'healthRate', 'netApr', 'totalDebt');
+    expect(resp.quotation.currentPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+    expect(resp.quotation.targetPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
   });
 
   it('Test buildLeverageTransactionRequest', async function () {
