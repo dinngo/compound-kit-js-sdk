@@ -20,8 +20,22 @@ describe('Collateral Swap', function () {
     const resp = await getCollateralSwapQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
-    expect(resp.quotation.currentPosition).to.have.keys('utilization', 'healthRate', 'netApr', 'totalDebt');
-    expect(resp.quotation.targetPosition).to.have.keys('utilization', 'healthRate', 'netApr', 'totalDebt');
+    expect(resp.quotation.currentPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+    expect(resp.quotation.targetPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
   });
 
   it('Test buildCollateralSwapTransactionRequest', async function () {
