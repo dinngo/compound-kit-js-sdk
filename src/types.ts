@@ -15,41 +15,43 @@ export interface CollateralInfo {
   borrowCollateralFactor: string;
   liquidateCollateralFactor: string;
   collateralBalance: string;
-  collateralValue: string;
+  collateralUSD: string;
   borrowCapacity: string;
-  borrowCapacityValue: string;
+  borrowCapacityUSD: string;
 }
 
 export interface MarketInfo {
   baseToken: common.Token;
   baseTokenPrice: string;
-  supplyApr: string;
+  supplyAPR: string;
   supplyBalance: string;
-  supplyValue: string;
-  borrowApr: string;
+  supplyUSD: string;
+  borrowAPR: string;
   borrowBalance: string;
-  borrowValue: string;
-  collateralValue: string;
+  borrowUSD: string;
+  collateralUSD: string;
   borrowCapacity: string;
-  borrowCapacityValue: string;
+  borrowCapacityUSD: string;
   availableToBorrow: string;
-  availableToBorrowValue: string;
+  availableToBorrowUSD: string;
   liquidationLimit: string;
   liquidationThreshold: string;
   liquidationRisk: string;
   liquidationPoint: string;
-  liquidationPointValue: string;
+  liquidationPointUSD: string;
   utilization: string;
   healthRate: string;
-  netApr: string;
+  netAPR: string;
   collaterals: CollateralInfo[];
 }
 
 export interface Position {
   utilization: string;
   healthRate: string;
-  netApr: string;
-  totalDebt: string;
+  liquidationThreshold: string;
+  borrowUSD: string;
+  collateralUSD: string;
+  netAPR: string;
 }
 
 export type QuoteAPIResponseBody<T = any> = Pick<apisdk.RouterDataEstimateResult, 'approvals' | 'permitData'> &
