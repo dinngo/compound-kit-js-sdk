@@ -5,8 +5,8 @@ import * as common from '@protocolink/common';
 
 export interface LeverageParams {
   account: string;
-  token: common.TokenObject;
-  amount: string;
+  token?: common.TokenObject;
+  amount?: string;
   slippage?: number;
 }
 
