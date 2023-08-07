@@ -36,6 +36,34 @@ describe('Leverage', function () {
     );
   });
 
+  it('Test getLeverageQuotation without token and amount', async function () {
+    const chainId = common.ChainId.polygon;
+    const marketId = MarketId.USDC;
+    const params = {
+      account: '0x9fC7D6E7a3d4aB7b8b28d813f68674C8A6e91e83',
+      slippage: 100,
+    };
+    const resp = await getLeverageQuotation(chainId, marketId, params);
+    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp.quotation).to.have.keys('leverageTimes', 'currentPosition', 'targetPosition');
+    expect(resp.quotation.currentPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+    expect(resp.quotation.targetPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+  });
+
   it('Test buildLeverageTransactionRequest', async function () {
     const routerData: apisdk.RouterData = {
       chainId: common.ChainId.polygon,

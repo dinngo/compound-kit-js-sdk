@@ -36,6 +36,34 @@ describe('Deleverage', function () {
     );
   });
 
+  it('Test getDeleverageQuotation without token and amount', async function () {
+    const chainId = common.ChainId.polygon;
+    const marketId = MarketId.USDC;
+    const params = {
+      account: '0xa3C1C91403F0026b9dd086882aDbC8Cdbc3b3cfB',
+      slippage: 100,
+    };
+    const resp = await getDeleverageQuotation(chainId, marketId, params);
+    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp.quotation).to.have.keys('currentPosition', 'targetPosition');
+    expect(resp.quotation.currentPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+    expect(resp.quotation.targetPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+  });
+
   it('Test buildDeleverageTransactionRequest', async function () {
     const routerData: apisdk.RouterData = {
       chainId: common.ChainId.polygon,

@@ -5,9 +5,9 @@ import * as common from '@protocolink/common';
 
 export interface CollateralSwapParams {
   account: string;
-  withdrawalToken: common.TokenObject;
-  amount: string;
-  targetToken: common.TokenObject;
+  withdrawalToken?: common.TokenObject;
+  amount?: string;
+  targetToken?: common.TokenObject;
   slippage?: number;
 }
 
