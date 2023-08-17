@@ -17,7 +17,7 @@ describe('Collateral Swap', function () {
       slippage: 100,
     };
     const resp = await getCollateralSwapQuotation(chainId, marketId, params);
-    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
@@ -45,7 +45,7 @@ describe('Collateral Swap', function () {
       slippage: 100,
     };
     const resp = await getCollateralSwapQuotation(chainId, marketId, params);
-    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
@@ -71,10 +71,11 @@ describe('Collateral Swap', function () {
       account: '0x9fC7D6E7a3d4aB7b8b28d813f68674C8A6e91e83',
       logics: [
         {
-          rid: 'balancer-v2:flash-loan',
+          rid: 'utility:flash-loan-aggregator',
           fields: {
-            id: '2d7fdf8e-0ecc-4d91-9549-601e8e5df5f3',
-            outputs: [
+            id: 'cc38abe7-7352-43e4-9695-fd3d5d684770',
+            protocolId: 'balancer-v2',
+            loans: [
               {
                 token: {
                   chainId: 137,
@@ -108,9 +109,9 @@ describe('Collateral Swap', function () {
                 address: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
                 decimals: 18,
                 symbol: 'WMATIC',
-                name: 'Wrapped Matic',
+                name: 'Wrapped Matic Token',
               },
-              amount: '2628.21',
+              amount: '2894.958779120659146087',
             },
             slippage: 100,
           },
@@ -125,9 +126,9 @@ describe('Collateral Swap', function () {
                 address: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
                 decimals: 18,
                 symbol: 'WMATIC',
-                name: 'Wrapped Matic',
+                name: 'Wrapped Matic Token',
               },
-              amount: '2628.21',
+              amount: '2894.958779120659146087',
             },
             balanceBps: 10000,
           },
@@ -149,10 +150,11 @@ describe('Collateral Swap', function () {
           },
         },
         {
-          rid: 'balancer-v2:flash-loan',
+          rid: 'utility:flash-loan-aggregator',
           fields: {
-            id: '2d7fdf8e-0ecc-4d91-9549-601e8e5df5f3',
-            outputs: [
+            id: 'cc38abe7-7352-43e4-9695-fd3d5d684770',
+            protocolId: 'balancer-v2',
+            loans: [
               {
                 token: {
                   chainId: 137,

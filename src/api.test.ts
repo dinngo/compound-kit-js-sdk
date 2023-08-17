@@ -21,7 +21,7 @@ describe('API client', function () {
       slippage: 100,
     };
     const resp = await quote(chainId, marketId, 'leverage', params);
-    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
   });
 
   it('Test buildRouterTransactionRequest', async function () {

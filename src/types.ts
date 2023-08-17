@@ -54,7 +54,7 @@ export interface Position {
   netAPR: string;
 }
 
-export type QuoteAPIResponseBody<T = any> = Pick<apisdk.RouterDataEstimateResult, 'approvals' | 'permitData'> &
+export type QuoteAPIResponseBody<T = any> = Pick<apisdk.RouterDataEstimateResult, 'fees' | 'approvals' | 'permitData'> &
   Pick<apisdk.RouterData, 'logics'> & {
     quotation: T;
   };

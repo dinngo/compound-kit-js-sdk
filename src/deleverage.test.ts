@@ -16,7 +16,7 @@ describe('Deleverage', function () {
       slippage: 100,
     };
     const resp = await getDeleverageQuotation(chainId, marketId, params);
-    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
@@ -44,7 +44,7 @@ describe('Deleverage', function () {
       slippage: 100,
     };
     const resp = await getDeleverageQuotation(chainId, marketId, params);
-    expect(resp).to.have.keys('quotation', 'approvals', 'logics');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
@@ -70,10 +70,11 @@ describe('Deleverage', function () {
       account: '0xa3C1C91403F0026b9dd086882aDbC8Cdbc3b3cfB',
       logics: [
         {
-          rid: 'balancer-v2:flash-loan',
+          rid: 'utility:flash-loan-aggregator',
           fields: {
-            id: '65725776-971c-452b-8f3a-9f5c6f3e561c',
-            outputs: [
+            id: '1b0a5aa2-159e-4e65-89d0-5d5515b37aec',
+            protocolId: 'balancer-v2',
+            loans: [
               {
                 token: {
                   chainId: 137,
@@ -82,7 +83,7 @@ describe('Deleverage', function () {
                   symbol: 'WETH',
                   name: 'Wrapped Ether',
                 },
-                amount: '0.027284328312442956',
+                amount: '0.027839354558071959',
               },
             ],
             isLoan: true,
@@ -99,7 +100,7 @@ describe('Deleverage', function () {
                 symbol: 'WETH',
                 name: 'Wrapped Ether',
               },
-              amount: '0.027284328312442956',
+              amount: '0.027839354558071959',
             },
             output: {
               token: {
@@ -144,15 +145,16 @@ describe('Deleverage', function () {
                 symbol: 'WETH',
                 name: 'Wrapped Ether',
               },
-              amount: '0.027284328312442956',
+              amount: '0.027839354558071959',
             },
           },
         },
         {
-          rid: 'balancer-v2:flash-loan',
+          rid: 'utility:flash-loan-aggregator',
           fields: {
-            id: '65725776-971c-452b-8f3a-9f5c6f3e561c',
-            outputs: [
+            id: '1b0a5aa2-159e-4e65-89d0-5d5515b37aec',
+            protocolId: 'balancer-v2',
+            loans: [
               {
                 token: {
                   chainId: 137,
@@ -161,7 +163,7 @@ describe('Deleverage', function () {
                   symbol: 'WETH',
                   name: 'Wrapped Ether',
                 },
-                amount: '0.027284328312442956',
+                amount: '0.027839354558071959',
               },
             ],
             isLoan: false,
