@@ -10,9 +10,9 @@ describe('Collateral Swap', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x9fC7D6E7a3d4aB7b8b28d813f68674C8A6e91e83',
+      account: '0xb72c8bf1ca1714753ab376b53000db917964dc28',
       withdrawalToken: logics.compoundv3.polygonTokens.WETH,
-      amount: '1',
+      amount: '0.01',
       targetToken: logics.compoundv3.polygonTokens.WMATIC,
       slippage: 100,
     };
