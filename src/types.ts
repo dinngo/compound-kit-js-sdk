@@ -45,6 +45,10 @@ export interface MarketInfo {
   collaterals: CollateralInfo[];
 }
 
+export interface ZapTokenInfo {
+  tokens: common.Token[];
+}
+
 export interface Position {
   utilization: string;
   healthRate: string;
