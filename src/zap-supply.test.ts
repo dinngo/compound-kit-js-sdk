@@ -11,14 +11,14 @@ describe('Zap Supply', function () {
     const marketId = MarketId.USDC;
     const params = {
       account: '0x1eed63efba5f81d95bfe37d82c8e736b974f477b',
-      sourceToken: logics.compoundv3.polygonTokens.WETH,
-      amount: '1',
-      targetToken: logics.compoundv3.polygonTokens.WMATIC,
+      srcToken: logics.compoundv3.polygonTokens.WETH,
+      srcAmount: '1',
+      destToken: logics.compoundv3.polygonTokens.WMATIC,
       slippage: 100,
     };
     const resp = await getZapSupplyQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'permitData', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',
@@ -37,7 +37,7 @@ describe('Zap Supply', function () {
     );
   });
 
-  it('Test getZapSupplyQuotation without source token, amount and targetToken', async function () {
+  it('Test getZapSupplyQuotation without source token, source amount and destination token', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
@@ -46,7 +46,7 @@ describe('Zap Supply', function () {
     };
     const resp = await getZapSupplyQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',

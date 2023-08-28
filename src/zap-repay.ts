@@ -5,13 +5,13 @@ import * as common from '@protocolink/common';
 
 export interface ZapRepayParams {
   account: string;
-  sourceToken?: common.TokenObject;
-  amount?: string;
+  srcToken?: common.TokenObject;
+  srcAmount?: string;
   slippage?: number;
 }
 
 export interface ZapRepayQuotation {
-  targetTokenAmount: string;
+  destAmount: string;
   currentPosition: Position;
   targetPosition: Position;
 }

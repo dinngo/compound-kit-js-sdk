@@ -10,10 +10,10 @@ describe('Zap Withdraw', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0xf5eec99fe826612b762856bbd01c5e6ec62462a4',
-      withdrawalToken: logics.compoundv3.polygonTokens.USDC,
-      amount: '1',
-      targetToken: {
+      account: '0x43fc188f003e444e9e538189fc675acdfb8f5d12',
+      srcToken: logics.compoundv3.polygonTokens.USDC,
+      srcAmount: '1',
+      destToken: {
         chainId: 137,
         address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
         decimals: 6,
@@ -24,7 +24,7 @@ describe('Zap Withdraw', function () {
     };
     const resp = await getZapWithdrawQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'permitData', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',
@@ -43,7 +43,7 @@ describe('Zap Withdraw', function () {
     );
   });
 
-  it('Test getZapWithdrawQuotation without withdrawal token, amount and targetToken', async function () {
+  it('Test getZapWithdrawQuotation without source token, source amount and destination token', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
@@ -52,7 +52,7 @@ describe('Zap Withdraw', function () {
     };
     const resp = await getZapWithdrawQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',

@@ -11,8 +11,8 @@ describe('Leverage', function () {
     const marketId = MarketId.USDC;
     const params = {
       account: '0x9fC7D6E7a3d4aB7b8b28d813f68674C8A6e91e83',
-      token: logics.compoundv3.polygonTokens.WETH,
-      amount: '1',
+      collateralToken: logics.compoundv3.polygonTokens.WETH,
+      collateralAmount: '1',
       slippage: 100,
     };
     const resp = await getLeverageQuotation(chainId, marketId, params);
@@ -36,7 +36,7 @@ describe('Leverage', function () {
     );
   });
 
-  it('Test getLeverageQuotation without token and amount', async function () {
+  it('Test getLeverageQuotation without collateral token and collateral amount', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {

@@ -5,14 +5,14 @@ import * as common from '@protocolink/common';
 
 export interface ZapWithdrawParams {
   account: string;
-  withdrawalToken?: common.TokenObject;
-  amount?: string;
-  targetToken?: common.TokenObject;
+  srcToken?: common.TokenObject;
+  srcAmount?: string;
+  destToken?: common.TokenObject;
   slippage?: number;
 }
 
 export interface ZapWithdrawQuotation {
-  targetTokenAmount: string;
+  destAmount: string;
   currentPosition: Position;
   targetPosition: Position;
 }

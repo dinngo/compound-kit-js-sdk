@@ -10,15 +10,15 @@ describe('Collateral Swap', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0xb72c8bf1ca1714753ab376b53000db917964dc28',
-      withdrawalToken: logics.compoundv3.polygonTokens.WETH,
-      amount: '0.01',
-      targetToken: logics.compoundv3.polygonTokens.WMATIC,
+      account: '0x0fbeabcafcf817d47e10a7bcfc15ba194dbd4eef',
+      srcToken: logics.compoundv3.polygonTokens.WETH,
+      srcAmount: '0.01',
+      destToken: logics.compoundv3.polygonTokens.WMATIC,
       slippage: 100,
     };
     const resp = await getCollateralSwapQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',
@@ -37,7 +37,7 @@ describe('Collateral Swap', function () {
     );
   });
 
-  it('Test getCollateralSwapQuotation without withdrawal token, amount and targetToken', async function () {
+  it('Test getCollateralSwapQuotation without source token, source amount and destination token', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
@@ -46,7 +46,7 @@ describe('Collateral Swap', function () {
     };
     const resp = await getCollateralSwapQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',
