@@ -11,8 +11,8 @@ describe('Deleverage', function () {
     const marketId = MarketId.USDC;
     const params = {
       account: '0xa3C1C91403F0026b9dd086882aDbC8Cdbc3b3cfB',
-      token: logics.compoundv3.polygonTokens.WETH,
-      amount: '50',
+      collateralToken: logics.compoundv3.polygonTokens.WETH,
+      baseAmount: '50',
       slippage: 100,
     };
     const resp = await getDeleverageQuotation(chainId, marketId, params);
@@ -36,7 +36,7 @@ describe('Deleverage', function () {
     );
   });
 
-  it('Test getDeleverageQuotation without token and amount', async function () {
+  it('Test getDeleverageQuotation without collateral token and base amount', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {

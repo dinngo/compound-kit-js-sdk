@@ -23,7 +23,7 @@
     "test:unit": "mocha --recursive src"
   },
   "dependencies": {
-    "@protocolink/api": "^0.2.16",
+    "@protocolink/api": "^0.2.17",
     "@protocolink/common": "^0.2.18",
     "@protocolink/core": "^0.2.20",
     "@protocolink/logics": "^0.2.16",

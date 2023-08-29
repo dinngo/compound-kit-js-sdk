@@ -11,19 +11,19 @@ describe('Zap Repay', function () {
     const marketId = MarketId.USDC;
     const params = {
       account: '0x0fbeabcafcf817d47e10a7bcfc15ba194dbd4eef',
-      sourceToken: {
+      srcToken: {
         chainId: 137,
         address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
         decimals: 6,
         symbol: 'USDT',
         name: '(PoS) Tether USD',
       },
-      amount: '1',
+      srcAmount: '1',
       slippage: 100,
     };
     const resp = await getZapRepayQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'permitData', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',
@@ -42,7 +42,7 @@ describe('Zap Repay', function () {
     );
   });
 
-  it('Test getZapRepayQuotation without source token and amount', async function () {
+  it('Test getZapRepayQuotation without source token and source amount', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
@@ -51,7 +51,7 @@ describe('Zap Repay', function () {
     };
     const resp = await getZapRepayQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
-    expect(resp.quotation).to.have.keys('targetTokenAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',
       'healthRate',

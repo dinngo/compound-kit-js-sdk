@@ -5,14 +5,14 @@ import * as common from '@protocolink/common';
 
 export interface ZapSupplyParams {
   account: string;
-  sourceToken?: common.TokenObject;
-  amount?: string;
-  targetToken?: common.TokenObject;
+  srcToken?: common.TokenObject;
+  srcAmount?: string;
+  destToken?: common.TokenObject;
   slippage?: number;
 }
 
 export interface ZapSupplyQuotation {
-  targetTokenAmount: string;
+  destAmount: string;
   currentPosition: Position;
   targetPosition: Position;
 }
