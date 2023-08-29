@@ -7,5 +7,6 @@ export * from './zap-borrow';
 export * from './zap-repay';
 export * from './zap-supply';
 export * from './zap-withdraw';
+export * from './zap-tokens';
 export * from './markets';
 export * from './types';
