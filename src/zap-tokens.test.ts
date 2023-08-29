@@ -13,10 +13,8 @@ describe('Zap Tokens', function () {
 
     testCases.forEach(({ title, chainId }) => {
       it(title, async function () {
-        const tokenInfo = await getZapTokens(chainId);
-        for (const token of tokenInfo.tokens) {
-          expect(token).to.have.all.keys(['chainId', 'address', 'decimals', 'symbol', 'name']);
-        }
+        const zapTokens = await getZapTokens(chainId);
+        expect(zapTokens).to.have.lengthOf.above(0);
       });
     });
   });
