@@ -1,5 +1,11 @@
 # @protocolink/compound-kit
 
+## 0.1.2
+
+### Patch Changes
+
+- f38d22d: Position type add supplyUSD
+
 ## 0.1.1
 
 ### Patch Changes
