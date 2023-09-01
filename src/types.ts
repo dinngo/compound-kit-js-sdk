@@ -49,6 +49,7 @@ export interface Position {
   utilization: string;
   healthRate: string;
   liquidationThreshold: string;
+  supplyUSD: string;
   borrowUSD: string;
   collateralUSD: string;
   netAPR: string;
