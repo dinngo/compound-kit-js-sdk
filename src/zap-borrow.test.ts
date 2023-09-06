@@ -10,7 +10,7 @@ describe('Zap Borrow', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x0fbeabcafcf817d47e10a7bcfc15ba194dbd4eef',
+      account: '0x0FBeABcaFCf817d47E10a7bCFC15ba194dbD4EEF',
       srcAmount: '1',
       destToken: {
         chainId: 137,
@@ -28,6 +28,7 @@ describe('Zap Borrow', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -36,6 +37,7 @@ describe('Zap Borrow', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -56,6 +58,7 @@ describe('Zap Borrow', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -64,6 +67,7 @@ describe('Zap Borrow', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -75,7 +79,7 @@ describe('Zap Borrow', function () {
     const marketId = MarketId.USDC;
     const routerData: apisdk.RouterData = {
       chainId,
-      account: '0x34693b4b0e8237854cee68251441a0bf301c4d65',
+      account: '0x34693b4b0E8237854Cee68251441a0bf301C4D65',
       logics: [
         {
           rid: 'compound-v3:borrow',

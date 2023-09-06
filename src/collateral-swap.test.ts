@@ -10,7 +10,7 @@ describe('Collateral Swap', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x0fbeabcafcf817d47e10a7bcfc15ba194dbd4eef',
+      account: '0x0FBeABcaFCf817d47E10a7bCFC15ba194dbD4EEF',
       srcToken: logics.compoundv3.polygonTokens.WETH,
       srcAmount: '0.01',
       destToken: logics.compoundv3.polygonTokens.WMATIC,
@@ -23,6 +23,7 @@ describe('Collateral Swap', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -31,6 +32,7 @@ describe('Collateral Swap', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -51,6 +53,7 @@ describe('Collateral Swap', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -59,6 +62,7 @@ describe('Collateral Swap', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'

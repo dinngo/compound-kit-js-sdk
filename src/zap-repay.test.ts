@@ -10,7 +10,7 @@ describe('Zap Repay', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x0fbeabcafcf817d47e10a7bcfc15ba194dbd4eef',
+      account: '0x0FBeABcaFCf817d47E10a7bCFC15ba194dbD4EEF',
       srcToken: {
         chainId: 137,
         address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
@@ -28,6 +28,7 @@ describe('Zap Repay', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -36,6 +37,7 @@ describe('Zap Repay', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -46,7 +48,7 @@ describe('Zap Repay', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0xf6da9e9d73d7893223578d32a95d6d7de5522767',
+      account: '0xF6Da9e9D73d7893223578D32a95d6d7de5522767',
       slippage: 100,
     };
     const resp = await getZapRepayQuotation(chainId, marketId, params);
@@ -56,6 +58,7 @@ describe('Zap Repay', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -64,6 +67,7 @@ describe('Zap Repay', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -75,7 +79,7 @@ describe('Zap Repay', function () {
     const marketId = MarketId.USDC;
     const routerData: apisdk.RouterData = {
       chainId,
-      account: '0xf6da9e9d73d7893223578d32a95d6d7de5522767',
+      account: '0xF6Da9e9D73d7893223578D32a95d6d7de5522767',
       logics: [
         {
           rid: 'paraswap-v5:swap-token',
@@ -101,7 +105,7 @@ describe('Zap Repay', function () {
           rid: 'compound-v3:repay',
           fields: {
             marketId,
-            borrower: '0xf6da9e9d73d7893223578d32a95d6d7de5522767',
+            borrower: '0xF6Da9e9D73d7893223578D32a95d6d7de5522767',
             input: {
               token: logics.compoundv3.polygonTokens.USDC,
               amount: '0.999527',

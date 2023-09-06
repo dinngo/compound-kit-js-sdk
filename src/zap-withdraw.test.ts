@@ -10,7 +10,7 @@ describe('Zap Withdraw', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x43fc188f003e444e9e538189fc675acdfb8f5d12',
+      account: '0xaD2e40949f15E9D045842881493dFEA3db31c96f',
       srcToken: logics.compoundv3.polygonTokens.USDC,
       srcAmount: '1',
       destToken: {
@@ -29,6 +29,7 @@ describe('Zap Withdraw', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -37,6 +38,7 @@ describe('Zap Withdraw', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -47,7 +49,7 @@ describe('Zap Withdraw', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x8238892095d3bac5322894e84f349bcd52f843d5',
+      account: '0x8238892095d3BAc5322894e84F349BCd52F843d5',
       slippage: 100,
     };
     const resp = await getZapWithdrawQuotation(chainId, marketId, params);
@@ -57,6 +59,7 @@ describe('Zap Withdraw', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -65,6 +68,7 @@ describe('Zap Withdraw', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -76,7 +80,7 @@ describe('Zap Withdraw', function () {
     const marketId = MarketId.USDC;
     const routerData: apisdk.RouterData = {
       chainId,
-      account: '0xf5eec99fe826612b762856bbd01c5e6ec62462a4',
+      account: '0xF5EEc99fE826612B762856bbd01C5E6EC62462A4',
       logics: [
         {
           rid: 'compound-v3:withdraw-base',

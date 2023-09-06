@@ -10,7 +10,7 @@ describe('Zap Supply', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x1eed63efba5f81d95bfe37d82c8e736b974f477b',
+      account: '0x1eED63EfBA5f81D95bfe37d82C8E736b974F477b',
       srcToken: logics.compoundv3.polygonTokens.WETH,
       srcAmount: '1',
       destToken: logics.compoundv3.polygonTokens.WMATIC,
@@ -23,6 +23,7 @@ describe('Zap Supply', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -31,6 +32,7 @@ describe('Zap Supply', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -41,7 +43,7 @@ describe('Zap Supply', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0x1eed63efba5f81d95bfe37d82c8e736b974f477b',
+      account: '0x1eED63EfBA5f81D95bfe37d82C8E736b974F477b',
       slippage: 100,
     };
     const resp = await getZapSupplyQuotation(chainId, marketId, params);
@@ -51,6 +53,7 @@ describe('Zap Supply', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -59,6 +62,7 @@ describe('Zap Supply', function () {
       'utilization',
       'healthRate',
       'liquidationThreshold',
+      'supplyUSD',
       'borrowUSD',
       'collateralUSD',
       'netAPR'
@@ -70,7 +74,7 @@ describe('Zap Supply', function () {
     const marketId = MarketId.USDC;
     const routerData: apisdk.RouterData = {
       chainId,
-      account: '0x1eed63efba5f81d95bfe37d82c8e736b974f477b',
+      account: '0x1eED63EfBA5f81D95bfe37d82C8E736b974F477b',
       logics: [
         {
           rid: 'paraswap-v5:swap-token',
