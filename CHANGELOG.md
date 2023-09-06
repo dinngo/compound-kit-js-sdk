@@ -1,5 +1,16 @@
 # @protocolink/compound-kit
 
+## 0.1.3
+
+### Patch Changes
+
+- 0ae4157: Updated dependencies
+  - @protocolink/api@0.3.0
+  - @protocolink/common@0.3.0
+  - @protocolink/core@0.3.2
+  - @protocolink/logics@0.3.0
+- b77eff0: fix test errors
+
 ## 0.1.2
 
 ### Patch Changes
