@@ -23,6 +23,7 @@ export interface CollateralInfo {
 export interface MarketInfo {
   baseToken: common.Token;
   baseTokenPrice: string;
+  baseBorrowMin: string;
   supplyAPR: string;
   supplyBalance: string;
   supplyUSD: string;
