@@ -1,5 +1,11 @@
 # @protocolink/compound-kit
 
+## 0.1.4
+
+### Patch Changes
+
+- 5eeeec2: type MarketInfo add baseBorrowMin
+
 ## 0.1.3
 
 ### Patch Changes
