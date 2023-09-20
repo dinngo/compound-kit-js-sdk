@@ -1,5 +1,15 @@
 # @protocolink/compound-kit
 
+## 0.1.5
+
+### Patch Changes
+
+- a520466: Updated dependencies
+  - @protocolink/api@0.4.0
+  - @protocolink/core@0.4.1
+  - @protocolink/logics@0.4.0
+- e9d03f9: zap supply, withdraw, repay add permit2Type param
+
 ## 0.1.4
 
 ### Patch Changes
