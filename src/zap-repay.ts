@@ -24,8 +24,6 @@ export async function getZapRepayQuotation(
   return quote(chainId, marketId, 'zap-repay', params);
 }
 
-export async function buildZapRepayTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
-) {
+export async function buildZapRepayTransactionRequest(routerData: apisdk.RouterData) {
   return buildRouterTransactionRequest(routerData);
 }

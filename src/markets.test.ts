@@ -36,6 +36,7 @@ describe('Markets', function () {
         expect(marketInfo).to.have.all.keys([
           'baseToken',
           'baseTokenPrice',
+          'baseBorrowMin',
           'supplyAPR',
           'supplyBalance',
           'supplyUSD',

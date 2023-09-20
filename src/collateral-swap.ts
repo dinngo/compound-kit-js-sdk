@@ -26,7 +26,7 @@ export async function getCollateralSwapQuotation(
 }
 
 export async function buildCollateralSwapTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
+  routerData: Omit<apisdk.RouterData, 'permitData' | 'permitSig'>
 ) {
   return buildRouterTransactionRequest(routerData);
 }

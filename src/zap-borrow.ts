@@ -25,7 +25,7 @@ export async function getZapBorrowQuotation(
 }
 
 export async function buildZapBorrowTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
+  routerData: Omit<apisdk.RouterData, 'permitData' | 'permitSig'>
 ) {
   return buildRouterTransactionRequest(routerData);
 }

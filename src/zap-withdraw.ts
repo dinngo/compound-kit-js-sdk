@@ -25,8 +25,6 @@ export async function getZapWithdrawQuotation(
   return quote(chainId, marketId, 'zap-withdraw', params);
 }
 
-export async function buildZapWithdrawTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
-) {
+export async function buildZapWithdrawTransactionRequest(routerData: apisdk.RouterData) {
   return buildRouterTransactionRequest(routerData);
 }

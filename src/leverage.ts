@@ -24,8 +24,6 @@ export async function getLeverageQuotation(
   return quote(chainId, marketId, 'leverage', params);
 }
 
-export async function buildLeverageTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
-) {
+export async function buildLeverageTransactionRequest(routerData: Omit<apisdk.RouterData, 'permitData' | 'permitSig'>) {
   return buildRouterTransactionRequest(routerData);
 }

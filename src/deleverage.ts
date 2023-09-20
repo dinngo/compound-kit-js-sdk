@@ -24,7 +24,7 @@ export async function getDeleverageQuotation(
 }
 
 export async function buildDeleverageTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
+  routerData: Omit<apisdk.RouterData, 'permitData' | 'permitSig'>
 ) {
   return buildRouterTransactionRequest(routerData);
 }

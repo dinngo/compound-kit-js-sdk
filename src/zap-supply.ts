@@ -25,8 +25,6 @@ export async function getZapSupplyQuotation(
   return quote(chainId, marketId, 'zap-supply', params);
 }
 
-export async function buildZapSupplyTransactionRequest(
-  routerData: Pick<apisdk.RouterData, 'chainId' | 'account' | 'logics' | 'referralCode'>
-) {
+export async function buildZapSupplyTransactionRequest(routerData: apisdk.RouterData) {
   return buildRouterTransactionRequest(routerData);
 }
