@@ -24,8 +24,17 @@ export async function getApiVersion(): Promise<string> {
   return data.version;
 }
 
-export async function quote(chainId: number, marketId: string, operation: string, data: any) {
-  const resp = await client.post(`/v1/markets/${chainId}/${marketId}/${operation}`, data);
+export async function quote(
+  chainId: number,
+  marketId: string,
+  operation: string,
+  data: any,
+  permit2Type?: apisdk.Permit2Type
+) {
+  const resp = await client.post(
+    `/v1/markets/${chainId}/${marketId}/${operation}${permit2Type ? `?permit2Type=${permit2Type}` : ''}`,
+    data
+  );
   return resp.data;
 }
 

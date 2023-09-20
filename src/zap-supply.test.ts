@@ -6,7 +6,7 @@ import { expect } from 'chai';
 import * as logics from '@protocolink/logics';
 
 describe('Zap Supply', function () {
-  it('Test getZapSupplyQuotation', async function () {
+  it('Test getZapSupplyQuotation with permit permit2Type', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
@@ -18,6 +18,39 @@ describe('Zap Supply', function () {
     };
     const resp = await getZapSupplyQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'permitData', 'logics');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation.currentPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'supplyUSD',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+    expect(resp.quotation.targetPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'supplyUSD',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+  });
+
+  it('Test getZapSupplyQuotation with approve permit2Type', async function () {
+    const chainId = common.ChainId.polygon;
+    const marketId = MarketId.USDC;
+    const params = {
+      account: '0x1eED63EfBA5f81D95bfe37d82C8E736b974F477b',
+      srcToken: logics.compoundv3.polygonTokens.WETH,
+      srcAmount: '1',
+      destToken: logics.compoundv3.polygonTokens.WMATIC,
+      slippage: 100,
+    };
+    const resp = await getZapSupplyQuotation(chainId, marketId, params, 'approve');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',

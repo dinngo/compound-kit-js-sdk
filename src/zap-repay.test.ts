@@ -6,7 +6,7 @@ import { expect } from 'chai';
 import * as logics from '@protocolink/logics';
 
 describe('Zap Repay', function () {
-  it('Test getZapRepayQuotation', async function () {
+  it('Test getZapRepayQuotation with permit permit2Type', async function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
@@ -23,6 +23,44 @@ describe('Zap Repay', function () {
     };
     const resp = await getZapRepayQuotation(chainId, marketId, params);
     expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'permitData', 'logics');
+    expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
+    expect(resp.quotation.currentPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'supplyUSD',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+    expect(resp.quotation.targetPosition).to.have.keys(
+      'utilization',
+      'healthRate',
+      'liquidationThreshold',
+      'supplyUSD',
+      'borrowUSD',
+      'collateralUSD',
+      'netAPR'
+    );
+  });
+
+  it('Test getZapRepayQuotation with approve permit2Type', async function () {
+    const chainId = common.ChainId.polygon;
+    const marketId = MarketId.USDC;
+    const params = {
+      account: '0x0FBeABcaFCf817d47E10a7bCFC15ba194dbD4EEF',
+      srcToken: {
+        chainId: 137,
+        address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+        decimals: 6,
+        symbol: 'USDT',
+        name: '(PoS) Tether USD',
+      },
+      srcAmount: '1',
+      slippage: 100,
+    };
+    const resp = await getZapRepayQuotation(chainId, marketId, params, 'approve');
+    expect(resp).to.have.keys('quotation', 'fees', 'approvals', 'logics');
     expect(resp.quotation).to.have.keys('destAmount', 'currentPosition', 'targetPosition');
     expect(resp.quotation.currentPosition).to.have.keys(
       'utilization',

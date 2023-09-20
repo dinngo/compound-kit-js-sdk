@@ -20,9 +20,10 @@ export interface ZapWithdrawQuotation {
 export async function getZapWithdrawQuotation(
   chainId: number,
   marketId: string,
-  params: ZapWithdrawParams
+  params: ZapWithdrawParams,
+  permit2Type?: apisdk.Permit2Type
 ): Promise<QuoteAPIResponseBody<ZapWithdrawQuotation>> {
-  return quote(chainId, marketId, 'zap-withdraw', params);
+  return quote(chainId, marketId, 'zap-withdraw', params, permit2Type);
 }
 
 export async function buildZapWithdrawTransactionRequest(routerData: apisdk.RouterData) {

@@ -19,9 +19,10 @@ export interface ZapRepayQuotation {
 export async function getZapRepayQuotation(
   chainId: number,
   marketId: string,
-  params: ZapRepayParams
+  params: ZapRepayParams,
+  permit2Type?: apisdk.Permit2Type
 ): Promise<QuoteAPIResponseBody<ZapRepayQuotation>> {
-  return quote(chainId, marketId, 'zap-repay', params);
+  return quote(chainId, marketId, 'zap-repay', params, permit2Type);
 }
 
 export async function buildZapRepayTransactionRequest(routerData: apisdk.RouterData) {
