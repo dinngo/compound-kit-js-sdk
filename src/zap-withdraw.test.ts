@@ -10,7 +10,7 @@ describe('Zap Withdraw', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0xaD2e40949f15E9D045842881493dFEA3db31c96f',
+      account: '0xD3a697cc0E85C7F52821c31ac86c8faFc195A70E',
       srcToken: logics.compoundv3.polygonTokens.USDC,
       srcAmount: '1',
       destToken: {
@@ -49,7 +49,7 @@ describe('Zap Withdraw', function () {
     const chainId = common.ChainId.polygon;
     const marketId = MarketId.USDC;
     const params = {
-      account: '0xaD2e40949f15E9D045842881493dFEA3db31c96f',
+      account: '0xD3a697cc0E85C7F52821c31ac86c8faFc195A70E',
       srcToken: logics.compoundv3.polygonTokens.USDC,
       srcAmount: '1',
       destToken: {
