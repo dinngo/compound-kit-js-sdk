@@ -1,5 +1,15 @@
 # @protocolink/compound-kit
 
+## 0.1.7
+
+### Patch Changes
+
+- fb7e49c: Updated dependencies
+  - @protocolink/api@0.4.3
+  - @protocolink/common@0.3.3
+  - @protocolink/core@0.4.2
+  - @protocolink/logics@0.4.3
+
 ## 0.1.6
 
 ### Patch Changes
